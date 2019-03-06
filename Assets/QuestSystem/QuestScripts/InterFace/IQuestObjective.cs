@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using QuestSystem;
-
-public class IQuestObjective : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace QuestSystem {
+    public interface IQuestObjective
     {
-        Quest q = new Quest();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        string Title { get; }
+        string Description { get; }
+        bool IsComplete { get; }
+        bool IsBonus { get; }
+        void UpdateProgress();
+        void CheckProgress();
     }
 }

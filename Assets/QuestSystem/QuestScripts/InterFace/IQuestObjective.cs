@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using QuestSystem;
 
 public class IQuestObjective : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
+        Quest q = new Quest();
         
     }
 

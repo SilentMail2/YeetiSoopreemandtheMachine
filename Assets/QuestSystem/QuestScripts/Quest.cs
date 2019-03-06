@@ -2,6 +2,7 @@
 {
     public class Quest
     {
+
         //Name
         //DescriptionSummary
         //Quest Hint
@@ -10,6 +11,13 @@
         //QuestID
         //ChainQuest and then quest is blank
         //ChainQuestID
+        private IQuestInformation information;
+        public IQuestInformation Information
+        {
+            get { return information; }
+        }
+
+
         //Objectives
         //Bonus Objectives
         //Rewards

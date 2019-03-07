@@ -30,14 +30,21 @@ public class DialogeTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 EtoTalk.SetActive(false);
-                flowChart.gameObject.SetActive(true);
+                Fungus.Flowchart.BroadcastFungusMessage(message);
                 other.GetComponent<Player_Control>().inDialogue = true;
                 Debug.Log("Lets Talk");//TriggerDialogue();
             }
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            EtoTalk.SetActive(false);
+        }
+    }
     public void EndConversation()
     {
-        flowChart.gameObject.SetActive(false);
+      //  flowChart.gameObject.SetActive(false);
     }
 }

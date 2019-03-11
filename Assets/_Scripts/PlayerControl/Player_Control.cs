@@ -6,6 +6,7 @@ public class Player_Control : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float speed;
+    [SerializeField] private float dashSpeed;
     [SerializeField] public bool inDialogue;
     float yRot;
     [SerializeField] private GameObject playerCamera;
@@ -40,7 +41,7 @@ public class Player_Control : MonoBehaviour
     {
         ObjectPool = GameObject.FindGameObjectWithTag("ObjectPool");
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
-
+        EquipGun(weapon);
     }
 
     // Update is called once per frame
@@ -49,6 +50,7 @@ public class Player_Control : MonoBehaviour
         if (!inDialogue)
         {
             Moving();
+            Dash();
             cameraMovement();
             Rotation();
         }
@@ -57,6 +59,19 @@ public class Player_Control : MonoBehaviour
     private void Moving()
     {
         cc.transform.Translate(new Vector3((Input.GetAxis("Horizontal") * speed * Time.deltaTime), 0, (Input.GetAxis("Vertical") * speed * Time.deltaTime)));
+    }
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
+        {
+            //Dashleft
+            cc.transform.Translate (-dashSpeed*Time.deltaTime,0,0);
+                }
+        if (Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
+        {
+            //Dashright
+            cc.transform.Translate(dashSpeed * Time.deltaTime, 0, 0);
+        }
     }
     private void cameraMovement()
     {

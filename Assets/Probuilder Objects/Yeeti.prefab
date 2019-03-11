@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3855231596834488052}
   - component: {fileID: 442554826}
   - component: {fileID: 442554827}
+  - component: {fileID: 442554835}
   m_Layer: 11
   m_Name: Yeeti
   m_TagString: Player
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  dashSpeed: 10
   inDialogue: 0
   playerCamera: {fileID: 0}
   camPos: {x: 0, y: 10, z: -6.66}
@@ -228,4 +230,26 @@ MonoBehaviour:
   health: 100
   isPlayer: 1
   maxHealth: 100
+  questable: 0
+  quest: {fileID: 0}
   healthBar: {fileID: 0}
+  drop: []
+--- !u!114 &442554835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855231596834487821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Yeeti Soopreem
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 

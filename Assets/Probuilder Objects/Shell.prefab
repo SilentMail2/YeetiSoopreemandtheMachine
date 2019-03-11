@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   timeTaken: 0
-  minSpread: -45
-  maxSpread: 45
+  minSpread: -15
+  maxSpread: 15
   spread: 0
   speed: 0.5
   barrelEnd: {fileID: 5126255105988041018}
@@ -647,8 +647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   timeTaken: 0
-  minSpread: -45
-  maxSpread: 45
+  minSpread: -15
+  maxSpread: 15
   spread: 0
   speed: 0.5
   barrelEnd: {fileID: 5126255105988041018}
@@ -976,8 +976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   timeTaken: 0
-  minSpread: -45
-  maxSpread: 45
+  minSpread: -15
+  maxSpread: 15
   spread: 0
   speed: 0.5
   barrelEnd: {fileID: 5126255105988041018}
@@ -1245,8 +1245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   timeTaken: 0
-  minSpread: -45
-  maxSpread: 45
+  minSpread: -15
+  maxSpread: 15
   spread: 0
   speed: 0.5
   barrelEnd: {fileID: 5126255105988041018}
@@ -1379,8 +1379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   timeTaken: 0
-  minSpread: -45
-  maxSpread: 45
+  minSpread: -15
+  maxSpread: 15
   spread: 0
   speed: 0.5
   barrelEnd: {fileID: 5126255105988041018}

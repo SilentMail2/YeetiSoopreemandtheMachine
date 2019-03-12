@@ -10,7 +10,7 @@ public class GunScript : MonoBehaviour
     [SerializeField] GameObject barrelEnd;
     [SerializeField] GameObject Smoke;
     [SerializeField] Animator shotgunAnim;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,33 +18,35 @@ public class GunScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (FindObjectOfType<Player_Control>().inDialogue == false)
-        {
-            if (Input.GetButtonDown("Fire1"))
+        
+            if (FindObjectOfType<Player_Control>().inDialogue == false)
             {
-                if (Weapon == weaponType.Shotgun)
+                if (Input.GetButtonDown("Fire1"))
                 {
-                    if (shotgunAnim.GetBool("ShotReady"))
+                    if (Weapon == weaponType.Shotgun)
                     {
-                        Smoke.SetActive(true);
-                        Instantiate(bullet[0], barrelEnd.transform.position, barrelEnd.transform.rotation);
-                        shotgunAnim.SetBool("ShotReady", false);
+                        if (shotgunAnim.GetBool("ShotReady"))
+                        {
+                            Smoke.SetActive(true);
+                            Instantiate(bullet[0], barrelEnd.transform.position, barrelEnd.transform.rotation);
+                            shotgunAnim.SetBool("ShotReady", false);
+                        }
                     }
-                }
-                if (Weapon == weaponType.Handgun)
-                {
-                    if (shotgunAnim.GetBool("ShotReady"))
+                    if (Weapon == weaponType.Handgun)
                     {
-                        Smoke.SetActive(true);
-                        Instantiate(bullet[0], barrelEnd.transform.position, barrelEnd.transform.rotation);
-                        shotgunAnim.SetBool("ShotReady", false);
+                        if (shotgunAnim.GetBool("ShotReady"))
+                        {
+                            Smoke.SetActive(true);
+                            Instantiate(bullet[0], barrelEnd.transform.position, barrelEnd.transform.rotation);
+                            shotgunAnim.SetBool("ShotReady", false);
+                        }
                     }
                 }
             }
         }
-    }
+
     public void ShotReady ()
     {
         Smoke.SetActive(false);

@@ -46,6 +46,13 @@ public class HealthScript : MonoBehaviour
             healthBar.value = health;
         }
     }
+    public void HitByUnarmed ()
+    {
+        if (health>0)
+        {
+            health -= 5;
+        }
+    }
     public void CheckDeath()
     {
         if (health <= 0)

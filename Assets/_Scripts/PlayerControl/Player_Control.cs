@@ -24,8 +24,11 @@ public class Player_Control : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private PickUp pickUpScript;
     [SerializeField] private GameObject equppedWeapon;
+    [SerializeField] GameObject unarmedObject;
 
-    
+
+
+   
     private enum WeaponType
     {
         Unarmed, Shotgun, Handgun
@@ -39,6 +42,7 @@ public class Player_Control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         ObjectPool = GameObject.FindGameObjectWithTag("ObjectPool");
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         EquipGun(weapon);
@@ -49,10 +53,15 @@ public class Player_Control : MonoBehaviour
     {
         if (!inDialogue)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Moving();
             Dash();
             cameraMovement();
             Rotation();
+        }
+        if (inDialogue)
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -92,6 +101,7 @@ public class Player_Control : MonoBehaviour
             equppedWeapon = GameObject.FindGameObjectWithTag("PlayersGun");
             equppedWeapon.transform.localEulerAngles = weaponSpawn.transform.localEulerAngles;
             hasGun = true;
+            unarmedObject.SetActive(false);
         }
         if (weapon == WeaponType.Handgun)
         {
@@ -99,6 +109,11 @@ public class Player_Control : MonoBehaviour
             equppedWeapon = GameObject.FindGameObjectWithTag("PlayersGun");
             equppedWeapon.transform.localEulerAngles = weaponSpawn.transform.localEulerAngles;
             hasGun = true;
+            unarmedObject.SetActive(false);
+        }
+        if (weapon == WeaponType.Unarmed)
+        {
+            unarmedObject.SetActive(true);
         }
 
 

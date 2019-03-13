@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
     public pickUpType type;
     public enum weaponType
     {
-        shotgun, handgun
+        shotgun, handgun, autoMat
     }
     public float health;
     public weaponType Weapon;

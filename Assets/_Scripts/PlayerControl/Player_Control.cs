@@ -9,6 +9,8 @@ public class Player_Control : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] public bool inDialogue;
     float yRot;
+    float mouseX;
+    float mouseY;
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private Vector3 camPos;
     [SerializeField] private CharacterController cc;
@@ -28,10 +30,11 @@ public class Player_Control : MonoBehaviour
 
 
 
+
    
     private enum WeaponType
     {
-        Unarmed, Shotgun, Handgun
+        Unarmed, Shotgun, Handgun, autoMat
     }
     [SerializeField] private WeaponType weapon;
 
@@ -42,18 +45,19 @@ public class Player_Control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
         ObjectPool = GameObject.FindGameObjectWithTag("ObjectPool");
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         EquipGun(weapon);
     }
+    
 
     // Update is called once per frame
     void Update()
     {
         if (!inDialogue)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
             Moving();
             Dash();
             cameraMovement();
@@ -86,10 +90,28 @@ public class Player_Control : MonoBehaviour
     {
         playerCamera.transform.position = this.transform.position + camPos;
     }
+    float AnglebetweenTwopoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
     private void Rotation()
     {
-        yRot += (Input.GetAxis("Rotate") * rotSp * Time.deltaTime);
-        transform.eulerAngles = new Vector3(0, yRot, 0);
+        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Plane ground = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+        if (ground.Raycast(cameraRay, out rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+
+            transform.LookAt(new Vector3(pointToLook.x,transform.position.y,pointToLook.z));
+        }
+
+
+
+      //  yRot += (Input.GetAxis("Rotate") * rotSp * Time.deltaTime);
+        //transform.eulerAngles = new Vector3(0, yRot, 0);
     }
     private void EquipGun(WeaponType weaponSelected)
     {
@@ -111,6 +133,14 @@ public class Player_Control : MonoBehaviour
             hasGun = true;
             unarmedObject.SetActive(false);
         }
+        if (weapon == WeaponType.autoMat)
+        {
+            Instantiate(weaponList[2], weaponSpawn.transform.position, Quaternion.identity, weaponSpawn.transform);
+            equppedWeapon = GameObject.FindGameObjectWithTag("PlayersGun");
+            equppedWeapon.transform.localEulerAngles = weaponSpawn.transform.localEulerAngles;
+            hasGun = true;
+            unarmedObject.SetActive(false);
+        }
         if (weapon == WeaponType.Unarmed)
         {
             unarmedObject.SetActive(true);
@@ -118,6 +148,7 @@ public class Player_Control : MonoBehaviour
 
 
     }
+
     /*void TakeDamage(float dam)
     {
         hp -= dam;
@@ -157,7 +188,18 @@ public class Player_Control : MonoBehaviour
                     }
                     if (hasGun) { return; }
                 }
-                
+                if (pickUpScript.Weapon == PickUp.weaponType.autoMat)
+                {
+                    if (!hasGun)
+                    {
+                        EquipGun(WeaponType.autoMat);
+                        other.gameObject.SetActive(false);
+                        pickUpScript = null;
+                    }
+                    if (hasGun) { return; }
+                }
+
+
             }
             if (pickUpScript.type == PickUp.pickUpType.health)
             {
@@ -166,6 +208,10 @@ public class Player_Control : MonoBehaviour
                 pickUpScript = null;
             }
         }
+    }
+    public void UnArm()
+    {
+        weapon = WeaponType.Unarmed;
     }
     public void DialogueExit()
     {

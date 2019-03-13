@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   timeTaken: 0
-  minSpread: -5
-  maxSpread: 5
+  minSpread: -1
+  maxSpread: 1
   spread: 0
   speed: 0.5
   barrelEnd: {fileID: 5126255105988041018}
@@ -324,4 +324,4 @@ MonoBehaviour:
   isPrime: 1
   barrelAngle: 0
   damageStuff: {fileID: 0}
-  dam: 0
+  dam: 20

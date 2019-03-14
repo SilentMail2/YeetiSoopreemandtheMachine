@@ -3261,10 +3261,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapon: 2
   bullet:
-  - {fileID: 5126255105988041018, guid: 159143f11228e7a458d03fcb22f33602, type: 3}
+  - {fileID: 5126255105988041018, guid: 42b9d9f38aeec6645944ff778d7c1a9d, type: 3}
   barrelEnd: {fileID: 4166729271703537640}
   Smoke: {fileID: 7333637429151112899}
   shotgunAnim: {fileID: 3004426697843288557}
+  ammoAmountUItext: {fileID: 0}
+  ammoAmmountUI: {fileID: 0}
+  ammoAmount: 20
+  player: {fileID: 0}
 --- !u!95 &3004426697843288557
 Animator:
   serializedVersion: 3

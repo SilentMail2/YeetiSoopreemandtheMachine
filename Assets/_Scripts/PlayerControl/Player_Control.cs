@@ -20,7 +20,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] private GameObject weaponSpawn;
     [SerializeField] private GameObject[] weaponList;
     [SerializeField] private float rotSp;
-    [SerializeField] private bool hasGun;
+    public bool hasGun;
     [SerializeField] private int ammo;
     [SerializeField] private int maxAmmo;
     [SerializeField] private float health;
@@ -28,7 +28,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] private GameObject equppedWeapon;
     [SerializeField] GameObject unarmedObject;
 
-
+    [SerializeField] GameObject targetCursor;
 
 
    
@@ -49,6 +49,7 @@ public class Player_Control : MonoBehaviour
         ObjectPool = GameObject.FindGameObjectWithTag("ObjectPool");
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
         EquipGun(weapon);
+        targetCursor = GameObject.Find("CrossHair");
     }
     
 
@@ -62,10 +63,14 @@ public class Player_Control : MonoBehaviour
             Dash();
             cameraMovement();
             Rotation();
+            Cursor.visible = false;
+            targetCursor.SetActive(true);
         }
         if (inDialogue)
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            targetCursor.SetActive(false);
         }
     }
 
@@ -97,17 +102,19 @@ public class Player_Control : MonoBehaviour
 
     private void Rotation()
     {
-        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        /* Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Plane ground = new Plane(Vector3.up, Vector3.zero);
-        float rayLength;
-        if (ground.Raycast(cameraRay, out rayLength))
-        {
-            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+         Plane ground = new Plane(Vector3.up, new Vector3(0,this.transform.position.y,0));
+         float rayLength;
+         if (ground.Raycast(cameraRay, out rayLength))
+         {
+             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
 
-            transform.LookAt(new Vector3(pointToLook.x,transform.position.y,pointToLook.z));
-        }
-
+             transform.LookAt(new Vector3(pointToLook.x,pointToLook.y,pointToLook.z));
+         }
+         */
+        Vector3 pointLook = targetCursor.transform.position;
+        transform.LookAt(new Vector3(pointLook.x, this.transform.position.y, pointLook.z));
 
 
       //  yRot += (Input.GetAxis("Rotate") * rotSp * Time.deltaTime);
@@ -144,6 +151,8 @@ public class Player_Control : MonoBehaviour
         if (weapon == WeaponType.Unarmed)
         {
             unarmedObject.SetActive(true);
+            hasGun = false;
+
         }
 
 

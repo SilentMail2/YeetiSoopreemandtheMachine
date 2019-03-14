@@ -14,14 +14,16 @@ public class GunScript : MonoBehaviour
     [SerializeField] Text ammoAmountUItext;
     [SerializeField] GameObject ammoAmmountUI;
     [SerializeField] int ammoAmount;
+    [SerializeField] GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
         ammoAmmountUI = GameObject.FindGameObjectWithTag("ammoUI");
-        ammoAmmountUI.SetActive(true);
-        
+       // ammoAmmountUI.SetActive(true);
+        ammoAmountUItext = GameObject.Find("AmmoUIText").GetComponent<Text>();
         ammoAmountUItext.text = ammoAmount.ToString();
+        player = GameObject.Find("Yeeti");
     }
 
     // Update is called once per frame
@@ -29,8 +31,9 @@ public class GunScript : MonoBehaviour
     {
         if (ammoAmount<=0)
         {
-            Player_Control.FindObjectOfType<Player_Control>().UnArm();
-            ammoAmmountUI.SetActive(false);
+            player.GetComponent<Player_Control>().UnArm();
+            player.GetComponent<Player_Control>().hasGun = false;
+          //  ammoAmmountUI.SetActive(false);
             Destroy(this.gameObject);
         }
         ammoAmountUItext.text = ammoAmount.ToString();

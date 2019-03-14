@@ -166,11 +166,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   agent: {fileID: 5485382323540305078}
-  healthPoints: 30
+  healthPoints: 0
   lookRadius: 10
   target: {fileID: 0}
   seesPlayer: 0
-  bullet: {fileID: 5126255105988041018, guid: 1c1763c19a883d142a3ae601c69c8f6c, type: 3}
+  bullet: {fileID: 5126255105988041018, guid: 9325af82e6b89d74ea39fc8ee2f0d8a2, type: 3}
   barrelPoint: {fileID: 5311485754681434830}
   bulletTime: 0.5
   timeBullet: 1
@@ -186,10 +186,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.58
+  m_Height: 2.55
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &50538316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,8 +205,20 @@ MonoBehaviour:
   health: 10
   isPlayer: 0
   maxHealth: 0
+  questable: 1
+  quest: {fileID: 0}
   healthBar: {fileID: 0}
   drop:
   - {fileID: 4609445855623073391, guid: 242b28c9ae226d0479e090d9f6b9aa34, type: 3}
   - {fileID: 5594788094341552415, guid: 189fbfaee1ad94e47a8d55fc4369af79, type: 3}
+  - {fileID: 5594788094341552415, guid: 189fbfaee1ad94e47a8d55fc4369af79, type: 3}
+  - {fileID: 5594788094341552415, guid: 189fbfaee1ad94e47a8d55fc4369af79, type: 3}
+  - {fileID: 2678390092004042981, guid: c9ef3fda3527c624d97ae6f185c483e3, type: 3}
+  - {fileID: 4609445855623073391, guid: 242b28c9ae226d0479e090d9f6b9aa34, type: 3}
+  - {fileID: 5594788094341552415, guid: 189fbfaee1ad94e47a8d55fc4369af79, type: 3}
+  - {fileID: 5594788094341552415, guid: 189fbfaee1ad94e47a8d55fc4369af79, type: 3}
+  - {fileID: 5594788094341552415, guid: 189fbfaee1ad94e47a8d55fc4369af79, type: 3}
   - {fileID: 8645067885152051746, guid: 6b936b197365de44884fca899e525d40, type: 3}
+  - {fileID: 8645067885152051746, guid: 6b936b197365de44884fca899e525d40, type: 3}
+  - {fileID: 4609445855623073391, guid: 242b28c9ae226d0479e090d9f6b9aa34, type: 3}
+  - {fileID: 2678390092004042981, guid: c9ef3fda3527c624d97ae6f185c483e3, type: 3}

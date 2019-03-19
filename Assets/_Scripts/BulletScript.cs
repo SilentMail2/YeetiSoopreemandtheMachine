@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     enum faction { Player, enemy}
-    faction type;
+    [SerializeField] faction type;
     [SerializeField] float time;
     [SerializeField] float timeTaken;
     bool isRandom;
@@ -53,10 +53,21 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 11)
+        if (type == faction.Player)
         {
-            damageStuff = other.GetComponent<HealthScript>();
-            damageStuff.TakeHealth(dam);
+            if (other.gameObject.layer == 11)
+            {
+                damageStuff = other.GetComponent<HealthScript>();
+                damageStuff.TakeHealth(dam);
+            }
+        }
+        if (type == faction.enemy)
+        {
+            if (other.gameObject.layer == 13)
+            {
+                damageStuff = other.GetComponent<HealthScript>();
+                damageStuff.TakeHealth(dam);
+            }
         }
         Destroy(this.gameObject);
     }

@@ -10,6 +10,7 @@ TagManager:
   - PlayersGun
   - Bullet
   - ammoUI
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -22,10 +23,10 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - Shootable
+  - ShootableEnemy
   - PickUp
   - Bullet
-  - 
+  - ShootablePlayer
   - 
   - 
   - 

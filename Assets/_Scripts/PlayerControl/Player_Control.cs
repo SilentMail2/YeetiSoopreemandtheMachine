@@ -27,6 +27,8 @@ public class Player_Control : MonoBehaviour
     [SerializeField] private PickUp pickUpScript;
     [SerializeField] private GameObject equppedWeapon;
     [SerializeField] GameObject unarmedObject;
+    public bool unarmedReady;
+
 
     [SerializeField] GameObject targetCursor;
 
@@ -58,6 +60,16 @@ public class Player_Control : MonoBehaviour
     {
         if (!inDialogue)
         {
+           /* if (weapon == WeaponType.Unarmed)
+            {
+                if (Input.GetButtonDown("Fire1") && unarmedReady)
+                {
+                    Instantiate(unarmedObject, weaponSpawn.transform.position, weaponSpawn.transform.rotation,weaponSpawn.transform);
+                    unarmedReady = false;
+
+                }
+            }*/
+
             Cursor.lockState = CursorLockMode.Confined;
             Moving();
             Dash();
@@ -148,12 +160,12 @@ public class Player_Control : MonoBehaviour
             hasGun = true;
             unarmedObject.SetActive(false);
         }
-        if (weapon == WeaponType.Unarmed)
+       /* if (weapon == WeaponType.Unarmed)
         {
             unarmedObject.SetActive(true);
             hasGun = false;
 
-        }
+        }*/
 
 
     }

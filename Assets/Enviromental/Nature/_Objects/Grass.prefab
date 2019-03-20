@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1140476339433788448}
-  - component: {fileID: 6658996171224205047}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6658996171224205047
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506592203642184073}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.96978, y: 1.9618225, z: 1}
-  m_Center: {x: 0.017024994, y: 1.1674919, z: 0}
 --- !u!1001 &7679002271785184950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +42,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass_Mesh_Asset
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014048254699659416, guid: 810b5a630b1ec754bb3fa4126acff714,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2712248219609817360, guid: 810b5a630b1ec754bb3fa4126acff714,
         type: 3}
@@ -111,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 915196707862413801, guid: 810b5a630b1ec754bb3fa4126acff714,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 810b5a630b1ec754bb3fa4126acff714, type: 3}

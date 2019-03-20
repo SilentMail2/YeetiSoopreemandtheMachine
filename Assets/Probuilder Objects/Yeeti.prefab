@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 3855231596834487821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 340585776765831402}
   m_Father: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   dashSpeed: 100
   inDialogue: 0
   playerCamera: {fileID: 0}
-  camPos: {x: 0, y: 22, z: -5}
+  camPos: {x: -5, y: 44, z: 5}
   cc: {fileID: 3855231596834487822}
   ObjectPool: {fileID: 0}
   weaponSpawn: {fileID: 507628155799275153}

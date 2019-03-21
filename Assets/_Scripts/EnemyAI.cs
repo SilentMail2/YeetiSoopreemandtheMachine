@@ -26,16 +26,20 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float distance = Vector3.Distance(target.position, transform.position);
-        if (distance<=lookRadius)
+        if (!target.GetComponent<Player_Control>().inDialogue)
         {
-            seesPlayer = true;
-            if (distance <= agent.stoppingDistance)
+            if (distance <= lookRadius)
             {
-                //Attack the target
-                AttackTarget();
-                //Face the target
-                FaceTarget();
+                seesPlayer = true;
+                if (distance <= agent.stoppingDistance)
+                {
+                    //Attack the target
+                    AttackTarget();
+                    //Face the target
+                    FaceTarget();
+                }
             }
         }
         if (seesPlayer)
@@ -72,6 +76,10 @@ public class EnemyAI : MonoBehaviour
             Instantiate(bullet, barrelPoint.position, barrelPoint.rotation);
             bulletTime = timeBullet;
                 }
+    }
+    public void FindPlayer()
+    {
+        seesPlayer = true;
     }
     /*private void OnTriggerEnter(Collider other)
     {

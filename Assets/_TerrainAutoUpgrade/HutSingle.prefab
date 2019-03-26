@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6881215608833982821}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HutSingle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6881215608833957189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 88.00061, y: 18.735153, z: 253.61374}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1406, y: 1.1406, z: 1.1406}
   m_Children:
   - {fileID: 6881215608833982827}
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6881215608833982827}
   - component: {fileID: 6881215608832655689}
   - component: {fileID: 6881215608831689609}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

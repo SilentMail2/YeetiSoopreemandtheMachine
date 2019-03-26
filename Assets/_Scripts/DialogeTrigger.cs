@@ -7,6 +7,7 @@ public class DialogeTrigger : MonoBehaviour
 {
     public Flowchart flowChart;
     public GameObject EtoTalk;
+    public bool automaticTrigger;
     public Dialogue[] dialogue;
     public string message;
     public bool dialogueGiven;
@@ -17,25 +18,39 @@ public class DialogeTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            EtoTalk.SetActive(true);
+            if (!automaticTrigger)
+            {
+                EtoTalk.SetActive(true);
 
+            }
+            if (automaticTrigger)
+            {
+                Fungus.Flowchart.BroadcastFungusMessage(message);
+                other.GetComponent<Player_Control>().inDialogue = true;
+                Debug.Log("Lets Talk");//TriggerDialogue();
+            }
         }
+        
 
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!automaticTrigger)
             {
-                EtoTalk.SetActive(false);
-                Fungus.Flowchart.BroadcastFungusMessage(message);
-                other.GetComponent<Player_Control>().inDialogue = true;
-                Debug.Log("Lets Talk");//TriggerDialogue();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    EtoTalk.SetActive(false);
+                    Fungus.Flowchart.BroadcastFungusMessage(message);
+                    other.GetComponent<Player_Control>().inDialogue = true;
+                    Debug.Log("Lets Talk");//TriggerDialogue();
+                }
             }
+
         }
     }
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")

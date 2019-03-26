@@ -55,20 +55,31 @@ public class BulletScript : MonoBehaviour
     {
         if (type == faction.Player)
         {
-            if (other.gameObject.layer == 11)
-            {
+
                 damageStuff = other.GetComponent<HealthScript>();
-                damageStuff.TakeHealth(dam);
+                if (!damageStuff.isPlayer)
+                {
+                    damageStuff.TakeHealth(dam);
+                Destroy(this.gameObject);
             }
+            
+
         }
         if (type == faction.enemy)
         {
-            if (other.gameObject.layer == 13)
-            {
+
                 damageStuff = other.GetComponent<HealthScript>();
-                damageStuff.TakeHealth(dam);
+                if (damageStuff.isPlayer)
+                {
+                    damageStuff.TakeHealth(dam);
+                Destroy(this.gameObject);
             }
+
         }
-        Destroy(this.gameObject);
+        if (other.gameObject.layer == 15)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }

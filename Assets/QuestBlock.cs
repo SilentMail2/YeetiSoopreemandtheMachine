@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuestBlock : MonoBehaviour
 {
+    public string QuestName;
     public int killPoints;
     public int pointsNeeded;
     public string questCompleted;

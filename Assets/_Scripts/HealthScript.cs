@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
     [SerializeField] float health;
-    [SerializeField] bool isPlayer;
+    public bool isPlayer;
     [SerializeField] float maxHealth;
     [SerializeField] bool questable;
     [SerializeField] QuestBlock quest;
@@ -63,7 +63,7 @@ public class HealthScript : MonoBehaviour
             }
             if (!isPlayer)
             {
-                int randomDrop = (Random.Range(0, (drop.Length + 20)));
+                int randomDrop = (Random.Range(0, (drop.Length)));
                 if (randomDrop > drop.Length)
                 {
                     Destroy(this.gameObject);

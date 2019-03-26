@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3595208226823050539}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
   m_LocalPosition: {x: 0, y: 0, z: 1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7616371068748422789}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!1 &7616371068747924133
 GameObject:
   m_ObjectHideFlags: 0
@@ -20009,6 +20009,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7616371068748422789}
     m_Modifications:
+    - target: {fileID: 5283722203001741768, guid: dea8ec167c53bff4fbe38e5d9950efc6,
+        type: 3}
+      propertyPath: m_Name
+      value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283722203001741768, guid: dea8ec167c53bff4fbe38e5d9950efc6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283722203001741768, guid: dea8ec167c53bff4fbe38e5d9950efc6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3783591822555531554, guid: dea8ec167c53bff4fbe38e5d9950efc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20078,21 +20093,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283722203001741768, guid: dea8ec167c53bff4fbe38e5d9950efc6,
-        type: 3}
-      propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283722203001741768, guid: dea8ec167c53bff4fbe38e5d9950efc6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283722203001741768, guid: dea8ec167c53bff4fbe38e5d9950efc6,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 750528914687318555, guid: dea8ec167c53bff4fbe38e5d9950efc6,
         type: 3}

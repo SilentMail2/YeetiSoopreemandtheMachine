@@ -45,22 +45,29 @@ public class EnemyAI : MonoBehaviour
         if (seesPlayer)
         {
             agent.SetDestination(target.position);
-            agent.stoppingDistance = 10;
+            agent.stoppingDistance = 30;
         }
         if (!seesPlayer)
         {
-            if (agent.velocity.magnitude == 0f)
+            if (navPoints.Length != 0)
             {
-                agent.SetDestination(navPoints[navLength].position);
-                if (this.transform.position == navPoints[navLength].position)
+                if (agent.velocity.magnitude == 0f)
                 {
-                    navLength++;
-                }
+                    agent.SetDestination(navPoints[navLength].position);
+                    if (this.transform.position == navPoints[navLength].position)
+                    {
+                        navLength++;
+                    }
 
-                if (navLength >= navPoints.Length)
-                {
-                    navLength = 0;
+                    if (navLength >= navPoints.Length)
+                    {
+                        navLength = 0;
+                    }
                 }
+            }
+            if (navPoints.Length==0)
+            {
+                return;
             }
         }
     }

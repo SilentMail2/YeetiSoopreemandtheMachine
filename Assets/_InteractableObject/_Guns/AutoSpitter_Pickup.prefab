@@ -15,12 +15,14 @@ GameObject:
   - component: {fileID: 2678390092004042987}
   - component: {fileID: 2678390092004042986}
   - component: {fileID: 2678390092004042988}
+  - component: {fileID: 1089984898}
+  - component: {fileID: 1089984899}
   m_Layer: 0
   m_Name: AutoSpitter_Pickup
-  m_TagString: Untagged
+  m_TagString: pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2678390092004042991
 Transform:
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2678390092004042981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -200.845, y: 3.3, z: 13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3262,3 +3264,28 @@ MonoBehaviour:
   type: 0
   health: 0
   Weapon: 2
+--- !u!122 &1089984898
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678390092004042981}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294901948
+  m_Size: 4.79
+--- !u!65 &1089984899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678390092004042981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.83353925, y: 1.0780108, z: 3.154004}
+  m_Center: {x: 0.015777454, y: 0.037372082, z: 0.08787799}

@@ -141,11 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe47d47ba4b31ca46baa3186d3b9f413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 25
   dashSpeed: 100
   inDialogue: 0
   playerCamera: {fileID: 0}
-  camPos: {x: -5, y: 44, z: 5}
+  camPos: {x: -18, y: 60, z: 18}
   cc: {fileID: 3855231596834487822}
   ObjectPool: {fileID: 0}
   weaponSpawn: {fileID: 507628155799275153}
@@ -164,7 +164,7 @@ MonoBehaviour:
     type: 3}
   unarmedReady: 1
   targetCursor: {fileID: 0}
-  weapon: 0
+  weapon: 1
   hp: 60
 --- !u!143 &3855231596834487822
 CharacterController:

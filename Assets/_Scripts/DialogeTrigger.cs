@@ -62,4 +62,8 @@ public class DialogeTrigger : MonoBehaviour
     {
       //  flowChart.gameObject.SetActive(false);
     }
+    public void DisableBlock()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

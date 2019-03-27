@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6506592203642184073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 63.22003, y: 23.466324, z: 261.97348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5706795765220446118}
   m_Father: {fileID: 0}
@@ -46,22 +46,22 @@ PrefabInstance:
     - target: {fileID: 2014048254699659416, guid: 810b5a630b1ec754bb3fa4126acff714,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2712248219609817360, guid: 810b5a630b1ec754bb3fa4126acff714,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 2712248219609817360, guid: 810b5a630b1ec754bb3fa4126acff714,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.338
       objectReference: {fileID: 0}
     - target: {fileID: 2712248219609817360, guid: 810b5a630b1ec754bb3fa4126acff714,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2712248219609817360, guid: 810b5a630b1ec754bb3fa4126acff714,
         type: 3}
@@ -108,6 +108,11 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 915196707862413801, guid: 810b5a630b1ec754bb3fa4126acff714,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd8fba2a1309021409aadfd008e0a25e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 810b5a630b1ec754bb3fa4126acff714, type: 3}
 --- !u!4 &5706795765220446118 stripped
